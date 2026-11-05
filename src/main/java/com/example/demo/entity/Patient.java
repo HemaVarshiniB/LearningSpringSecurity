@@ -34,9 +34,10 @@ public class Patient {
     private String gender;
 
     private String bloodGroup;
-//    @OneToOne
-//    @MapsId
-//    private User user;
+
+    @OneToOne
+    @MapsId
+    private User user;
 
 //    @CreationTimestamp
 //    @Column(updatable = false)
