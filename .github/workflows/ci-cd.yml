@@ -57,6 +57,9 @@ jobs:
           SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GITHUB_CLIENT_ID: ci-github-client
           SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GITHUB_CLIENT_SECRET: ci-github-secret
 
+      - name: Build Docker image
+        run: docker build --tag learning-spring-security:${{ github.sha }} .
+
       - name: Upload packaged application
         if: success() && github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
