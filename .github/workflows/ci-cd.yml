@@ -46,7 +46,7 @@ jobs:
           cache: maven
 
       - name: Build and run tests
-        run: ./mvnw --batch-mode --no-transfer-progress verify
+        run: bash ./mvnw --batch-mode --no-transfer-progress verify
         env:
           SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3307/hospital_db
           SPRING_DATASOURCE_USERNAME: root
